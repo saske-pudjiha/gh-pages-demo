@@ -3,6 +3,9 @@ const getDb = require('./db');
 
 const db = getDb();
 
+fs.mkdirSync('./build/static/db', { recursive: true });
+
+
 fs.mkdir('./build/static/db', () => {
     for (let [key, value] of Object.entries(db)) {
     fs.writeFile(
